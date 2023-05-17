@@ -1,0 +1,26 @@
+{
+  "-MiBsBKGWFEU-yluJkL-": {
+    "title": "Lights",
+    "firebaseKey": "-MiBsBKGWFEU-yluJkL-",
+    "definition": "Lights",
+    "profile_id": "-MiBsfuTafbEQ7eAULxV",
+    "need": "false",
+    "uid": ""
+  },
+  "-MiBsknNSQ6aBG1-2lQS": {
+    "title": "Water",
+    "firebaseKey": "-MiBsknNSQ6aBG1-2lQS",
+    "definition": "Water",
+    "profile_id": "-MiBt86VzkC-EGmJnxjm",
+    "need": "true",
+    "uid": ""
+  },
+  "-MiBuCve4-r_H-RLUOh2": {
+    "title": "Internet",
+    "firebaseKey": "-MiBuCve4-r_H-RLUOh2",
+    "definition": "Internet",
+    "profile_id": "-MiBtwf1BwN9pGavQeR3",
+    "need": "true",
+    "uid": ""
+  }
+}
