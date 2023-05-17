@@ -20,11 +20,11 @@ function ProfileCard({ profileObj, onUpdate }) {
       <Card.Body>
         <Card.Title>{profileObj.name}</Card.Title>
         {/* DYNAMIC LINK TO VIEW THE BOOK DETAILS */}
-        <Link href={`/teams/${profileObj.firebaseKey}`} passHref>
+        <Link href={`/profile/${profileObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
         {/* DYNAMIC LINK TO EDIT THE BOOK DETAILS  */}
-        <Link href={`/teams/edit/${profileObj.firebaseKey}`} passHref>
+        <Link href={`/profile/edit/${profileObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
         <Button variant="danger" onClick={deleteThisProfile} className="m-2">
