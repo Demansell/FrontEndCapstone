@@ -81,6 +81,17 @@ const getProfileExpense = (firebaseKey) => new Promise((resolve, reject) => {
     .then((data) => resolve(Object.values(data)))
     .catch(reject);
 });
+const getUserQuestions = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/questions.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
 
 export {
   getProfile,
@@ -89,4 +100,5 @@ export {
   deleteSingleProfile,
   updateProfile,
   getProfileExpense,
+  getUserQuestions,
 };
