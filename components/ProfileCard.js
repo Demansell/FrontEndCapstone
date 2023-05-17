@@ -16,7 +16,7 @@ function ProfileCard({ profileObj, onUpdate }) {
 
   return (
     <Card style={{ width: '18rem', margin: '10px', display: 'flex' }}>
-      {/* <Card.Img variant="top" src={Obj.image} alt={authorObj.title} style={{ height: '400px' }} /> */}
+      <Card.Img variant="top" src={profileObj.image} alt={profileObj.name} style={{ height: '400px' }} />
       <Card.Body>
         <Card.Title>{profileObj.name}</Card.Title>
         {/* DYNAMIC LINK TO VIEW THE BOOK DETAILS */}
@@ -39,6 +39,7 @@ ProfileCard.propTypes = {
   profileObj: PropTypes.shape({
     name: PropTypes.string,
     firebaseKey: PropTypes.string,
+    image: PropTypes.string,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };
