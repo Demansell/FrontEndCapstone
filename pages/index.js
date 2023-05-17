@@ -1,22 +1,40 @@
-// import { Button } from 'react-bootstrap'; // TODO: COMMENT IN FOR AUTH
-// import { signOut } from '../utils/auth'; // TODO: COMMENT IN FOR AUTH
-// import { useAuth } from '../utils/context/authContext'; // TODO: COMMENT IN FOR AUTH
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { Button } from 'react-bootstrap';
+import { useAuth } from '../utils/context/authContext';
+import { getProfile } from '../api/profile';
+import ProfileCard from '../components/ProfileCard';
 
 function Home() {
-  // const { user } = useAuth(); // TODO: COMMENT IN FOR AUTH
+  // TODO: Set a state for books
+  const [profiles, setProfile] = useState([]);
 
-  const user = { displayName: 'Dr. T' }; // TODO: COMMENT OUT FOR AUTH
+  // TODO: Get user ID using useAuth Hook
+  const { user } = useAuth();
+
+  // TODO: create a function that makes the API call to get all the books
+  const getAllTheTeams = () => {
+    getProfile(user.uid).then(setProfile);
+  };
+
+  // TODO: make the call to the API to get all the books on component render
+  useEffect(() => {
+    getAllTheTeams();
+  }, []);
+
   return (
-    <div
-      className="text-center d-flex flex-column justify-content-center align-content-center"
-      style={{
-        height: '90vh',
-        padding: '30px',
-        maxWidth: '400px',
-        margin: '0 auto',
-      }}
-    >
-      <h1>Hello {user.displayName}! </h1>
+    <div className="text-center my-4">
+      <Link href="/profile/new" passHref>
+        <Button>Add A Profile</Button>
+      </Link>
+      <div className="d-flex flex-wrap">
+        {/* TODO: map over books here using BookCard component */}
+        {profiles.map((profile) => (
+          <ProfileCard key={profile.firebaseKey} profileObj={profile} onUpdate={getAllTheTeams} />
+        ))}
+      </div>
+
     </div>
   );
 }
