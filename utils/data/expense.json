@@ -4,6 +4,7 @@
     "firebaseKey": "-MiBsBKGWFEU-yluJkL-",
     "definition": "Lights",
     "profile_id": "-MiBsfuTafbEQ7eAULxV",
+    "monthly_total": "1000",
     "need": "false",
     "uid": ""
   },
@@ -12,6 +13,7 @@
     "firebaseKey": "-MiBsknNSQ6aBG1-2lQS",
     "definition": "Water",
     "profile_id": "-MiBt86VzkC-EGmJnxjm",
+    "monthly_total": "1000",
     "need": "true",
     "uid": ""
   },
@@ -20,6 +22,7 @@
     "firebaseKey": "-MiBuCve4-r_H-RLUOh2",
     "definition": "Internet",
     "profile_id": "-MiBtwf1BwN9pGavQeR3",
+    "monthly_total": "1000",
     "need": "true",
     "uid": ""
   }

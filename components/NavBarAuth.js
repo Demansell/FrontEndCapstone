@@ -26,7 +26,7 @@ export default function NavBarAuth() {
             <Link passHref href="/profile/new">
               <Nav.Link>Create Profile</Nav.Link>
             </Link>
-            <Link passHref href="/members/member">
+            <Link passHref href="/expense/expense">
               <Nav.Link>Expenses</Nav.Link>
             </Link>
             <Link passHref href="/members/member">
