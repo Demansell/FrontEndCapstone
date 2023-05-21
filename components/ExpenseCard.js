@@ -24,7 +24,7 @@ function ExpenseCard({ expenseObj, onUpdate }) {
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
         {/* DYNAMIC LINK TO EDIT THE BOOK DETAILS  */}
-        <Link href={`/book/expense/${expenseObj.firebaseKey}`} passHref>
+        <Link href={`/expense/edit/${expenseObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
         <Button variant="danger" onClick={deleteThisExpense} className="m-2">
