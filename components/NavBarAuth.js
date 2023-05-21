@@ -29,7 +29,7 @@ export default function NavBarAuth() {
             <Link passHref href="/expense/expense">
               <Nav.Link>Expenses</Nav.Link>
             </Link>
-            <Link passHref href="/members/member">
+            <Link passHref href="/expense/new">
               <Nav.Link>Create Expenses</Nav.Link>
             </Link>
             <Link passHref href="/members/member">
