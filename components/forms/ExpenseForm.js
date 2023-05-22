@@ -5,7 +5,8 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import { useAuth } from '../../utils/context/authContext';
-import { createExpense, getExpenses, updateExpense } from '../../api/expense';
+import { createExpense, updateExpense } from '../../api/expense';
+import { getProfile } from '../../api/profile';
 
 const initialState = {
   title: '',
@@ -21,7 +22,7 @@ function ExpenseForm({ obj }) {
   const { user } = useAuth();
 
   useEffect(() => {
-    getExpenses(user.uid).then(setExpenses);
+    getProfile(user.uid).then(setExpenses);
 
     if (obj.firebaseKey) setFormInput(obj);
   }, [obj, user]);
@@ -100,7 +101,7 @@ function ExpenseForm({ obj }) {
           value={formInput.profile_id} // FIXME: modify code to remove error
           required
         >
-          <option value="">Select a Profile</option>
+          <option value="">Select a Team</option>
           {
             profiles.map((profile) => (
               <option
