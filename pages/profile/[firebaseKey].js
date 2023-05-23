@@ -45,6 +45,7 @@ export default function ViewProfile() {
         <h5>
           Monthly income: {profileExpense.monthly_income}
         </h5>
+        <h5 style={{ marginTop: '80px' }}>{expenses.length} Answers</h5>
       </div>
       <div className="d-flex flex-wrap">
         {profileExpense.expense?.map((member) => (
@@ -52,7 +53,7 @@ export default function ViewProfile() {
         ))}
       </div>
       <div className="mt-5">
-        <h5>Your Answer</h5>
+        <h5>Create Expense</h5>
         <ExpenseForm obj={{}} profile_Id={firebaseKey} onSubmit={handleAnswerSubmit} />
       </div>
     </div>
