@@ -31,7 +31,7 @@ export default function ViewExpense() {
           Definition: {expenseDetails?.definition}
         </h5>
         <h5>
-          Name: {expenseDetails?.profileObject?.name}
+          User Assigned: {expenseDetails?.profileObject?.name}
         </h5>
       </div>
     </div>

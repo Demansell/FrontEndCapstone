@@ -19,6 +19,7 @@ function ExpenseCard({ expenseObj, onUpdate }) {
       <Card.Body>
         <Card.Title>{expenseObj.title}</Card.Title>
         <p className="card-text bold">{expenseObj.need && <span>NEED?<br /></span> } ${expenseObj.monthly_total}</p>
+        <p className="card-text bold"> $</p>
         {/* DYNAMIC LINK TO VIEW THE BOOK DETAILS  */}
         <Link href={`/expense/${expenseObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>

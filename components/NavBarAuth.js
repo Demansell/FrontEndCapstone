@@ -11,7 +11,7 @@ export default function NavBarAuth() {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Link passHref href="/">
-          <Navbar.Brand>CHANGE ME</Navbar.Brand>
+          <Navbar.Brand>One Look</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -32,7 +32,7 @@ export default function NavBarAuth() {
             <Link passHref href="/expense/new">
               <Nav.Link>Create Expenses</Nav.Link>
             </Link>
-            <Link passHref href="/members/member">
+            <Link passHref href="/profile/profile">
               <Nav.Link>Profiles</Nav.Link>
             </Link>
             <Link passHref href="/members/member">
