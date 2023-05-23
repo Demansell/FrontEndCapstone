@@ -20,6 +20,7 @@ function ProfileCard({ profileObj, onUpdate }) {
       <Card.Body>
         <Card.Title>{profileObj.name}</Card.Title>
         {/* DYNAMIC LINK TO VIEW THE BOOK DETAILS */}
+        <p> Monthly Income: ${profileObj.monthly_income} </p>
         <Link href={`/profile/${profileObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
@@ -40,6 +41,7 @@ ProfileCard.propTypes = {
     name: PropTypes.string,
     firebaseKey: PropTypes.string,
     image: PropTypes.string,
+    monthly_income: PropTypes.string,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };
