@@ -26,8 +26,8 @@ function Home() {
 
   return (
     <div style={{ marginTop: '50px' }}>
-      <p>Find Profile
-      </p>
+      <h1>Find Profile
+      </h1>
       <input
         type="text"
         id="myInput"
