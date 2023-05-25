@@ -93,6 +93,18 @@ const getUserQuestions = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getProfileByName = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/profile.json?orderBy="name"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
+
 export {
   getProfile,
   createProfile,
@@ -101,4 +113,5 @@ export {
   updateProfile,
   getProfileExpense,
   getUserQuestions,
+  getProfileByName,
 };
