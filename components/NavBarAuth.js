@@ -38,6 +38,9 @@ export default function NavBarAuth() {
             <Link passHref href="/members/member">
               <Nav.Link>Expense Report</Nav.Link>
             </Link>
+            <Link passHref href="/profileNameTest">
+              <Nav.Link>Test name</Nav.Link>
+            </Link>
             <Button variant="danger" onClick={signOut}>Sign Out</Button>
           </Nav>
         </Navbar.Collapse>
