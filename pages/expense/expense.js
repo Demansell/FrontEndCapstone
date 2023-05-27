@@ -50,7 +50,7 @@ function ListExpense() {
             // eslint-disable-next-line no-shadow
             .map((expense, filter) => (
               // eslint-disable-next-line react/no-array-index-key
-              <ExpenseCard key={filter} expenseObj={expense} onUpdate={getAllExpenses} />
+              <ExpenseCard key={filter} obj={expense} onUpdate={getAllExpenses} />
             ))}
         </div>
       </div>
