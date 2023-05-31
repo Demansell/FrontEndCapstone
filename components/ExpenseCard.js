@@ -8,7 +8,7 @@ import { viewExpenseDetails } from '../api/merged';
 
 function ExpenseCard({ obj, onUpdate }) {
   const [expenseObj, setExpenseObj] = useState({});
-  // this useeffect make it pass in the profileObj
+  // this useeffect make it pass in the profileObj to the expense card
   useEffect(() => {
     viewExpenseDetails(obj.firebaseKey).then(setExpenseObj);
   }, []);
