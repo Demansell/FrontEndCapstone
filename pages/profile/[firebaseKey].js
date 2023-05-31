@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { createExpense } from '../../api/expense';
 import { viewProfileDetails } from '../../api/merged';
-import { getProfileExpense } from '../../api/profile';
+// import { getProfileExpense } from '../../api/profile';
 import ExpenseCard from '../../components/ExpenseCard';
 import ExpenseForm from '../../components/forms/ExpenseForm';
 
@@ -18,10 +18,10 @@ export default function ViewProfile() {
     viewProfileDetails(firebaseKey).then(setProfileMembers);
   }, [firebaseKey]);
 
-  useEffect(() => {
-    getProfileExpense(firebaseKey).then(setExpenses);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   getProfileExpense(firebaseKey).then(setExpenses);
+  // // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   const handleAnswerSubmit = (answer) => {
     createExpense(firebaseKey, answer)
@@ -49,7 +49,7 @@ export default function ViewProfile() {
       </div>
       <div className="d-flex flex-wrap">
         {profileExpense.expense?.map((member) => (
-          <ExpenseCard key={member.firebaseKey} expenseObj={member} onUpdate={viewProfileDetails} />
+          <ExpenseCard key={member.firebaseKey} obj={member} onUpdate={viewProfileDetails} />
         ))}
       </div>
       <div className="mt-5">

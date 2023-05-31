@@ -45,7 +45,7 @@ function ExpenseForm({ obj }) {
       createExpense(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateExpense(patchPayload).then(() => {
-          router.push('/expense/expense');
+          router.push('/expense/expenses');
         });
       });
     }
