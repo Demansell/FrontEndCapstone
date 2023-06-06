@@ -48,11 +48,11 @@ export default function ViewProfile() {
         <h5 style={{ marginTop: '80px' }}>Expenses: {expenses.length} </h5>
       </div>
       <div className="d-flex flex-wrap">
-        {profileExpense.expense?.map((member) => (
-          <ExpenseCard key={member.firebaseKey} obj={member} onUpdate={viewProfileDetails} />
+        {profileExpense.expense?.map((expense) => (
+          <ExpenseCard key={expense.firebaseKey} obj={expense} onUpdate={viewProfileDetails} />
         ))}
       </div>
-      <div className="mt-5">
+      <div className="d-flex flex-wrap">
         <ExpenseForm obj={{}} profile_Id={firebaseKey} onSubmit={handleAnswerSubmit} />
       </div>
     </div>

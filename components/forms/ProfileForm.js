@@ -48,7 +48,7 @@ function ProfileForm({ obj }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Profile</h2>
+      <h2 className="text-black mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Profile</h2>
 
       {/* Name INPUT  */}
       <FloatingLabel controlId="floatingInput1" label="Enter Name" className="mb-3">

@@ -53,7 +53,7 @@ function ExpenseForm({ obj }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Expense</h2>
+      <h2 className="text-black mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Expense</h2>
 
       {/* TITLE INPUT  */}
       <FloatingLabel controlId="floatingInput1" label="Title?" className="mb-3">
@@ -117,7 +117,7 @@ function ExpenseForm({ obj }) {
 
       {/* A WAY TO HANDLE UPDATES FOR TOGGLES, RADIOS, ETC  */}
       <Form.Check
-        className="text-white mb-3"
+        className="text-black mb-3"
         type="switch"
         id="need"
         name="need"
