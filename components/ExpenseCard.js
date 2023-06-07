@@ -12,7 +12,7 @@ function ExpenseCard({ obj, onUpdate }) {
   // this useeffect make it pass in the profileObj to the expense card
   useEffect(() => {
     viewExpenseDetails(obj.firebaseKey).then(setExpenseObj);
-  }, []);
+  });
 
   const deleteThisExpense = () => {
     if (window.confirm(`Delete ${expenseObj.title}?`)) {
