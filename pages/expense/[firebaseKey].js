@@ -20,7 +20,7 @@ export default function ViewExpense() {
       <div className="d-flex flex-column">
         <img src={expenseDetails?.image} alt="" style={{ width: '300px' }} />
       </div>
-      <div className="text-white ms-5 details">
+      <div className="text-black ms-5 details">
         <h5>
           title: {expenseDetails?.title}
         </h5>
