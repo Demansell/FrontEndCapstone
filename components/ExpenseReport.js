@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { deleteSingleProfile } from '../api/profile';
+import { viewExpenseReport } from '../api/merged';
 
 function ExpenseReportCard({ expenseReportObj, onUpdate }) {
+  const [expenseObj, setExpensesObj] = useState([]);
+
   // FOR DELETE, WE NEED TO REMOVE THE BOOK AND HAVE THE VIEW RERENDER,
   // SO WE PASS THE FUNCTION FROM THE PARENT THAT GETS THE BOOKS
+  useEffect(() => {
+    viewExpenseReport(expenseReportObj.firebaseKey).then(setExpensesObj);
+  }, []);
   const deleteThisProfile = () => {
     if (window.confirm(`Delete ${expenseReportObj.name}?`)) {
       deleteSingleProfile(expenseReportObj.firebaseKey).then(() => onUpdate());
@@ -20,8 +26,8 @@ function ExpenseReportCard({ expenseReportObj, onUpdate }) {
         <Card.Title>{expenseReportObj.name}</Card.Title>
         {/* DYNAMIC LINK TO VIEW THE BOOK DETAILS */}
         <p> Monthly Income: ${expenseReportObj.monthly_income} </p>
-        <p> Total Expenses: $200</p>
-        <p> Left Over Income: $500</p>
+        <p> Monthly Expenses: ${expenseObj.totalExpense}</p>
+        <p> Left Over Monthly Income: ${expenseObj.leftOverAmount}</p>
         <Button variant="danger" onClick={deleteThisProfile} className="m-2">
           DELETE
         </Button>
