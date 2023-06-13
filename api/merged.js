@@ -18,23 +18,18 @@ const viewProfileDetails = (profileFirebaseKey) => new Promise((resolve, reject)
     }).catch((error) => reject(error));
 });
 
-const viewExpenseReport = () => new Promise((resolve, reject) => {
+const viewExpenseReport = (profileFirebaseKey) => new Promise((resolve, reject) => {
   Promise.all([getSingleProfile(profileFirebaseKey), getProfileExpense(profileFirebaseKey)])
-    .then(([expenseObject, profileExpenseArray]) => {
+    .then(([profileObject, profileExpenseArray]) => {
       // need to map over expense array and add all the erxpenses together and add to total expenses
-      const totalExpenseArray = [expenseObject.monthly_total.firebaseKey];
-      function add(nums) {
-        let sum = 0;
-
-        for ( const num of nums) {
-          sum = sum + num;
-        }
-        return sum;
+      let totalExpenseNumber;
+      if (profileExpenseArray.length > 1) {
+        totalExpenseNumber = profileExpenseArray.reduce((total, currentObject) => total + Number(currentObject.monthly_total), 0);
+      } else {
+        totalExpenseNumber = profileExpenseArray[0]?.monthly_total ? Number(profileExpenseArray[0].monthly_total) : 0;
       }
-      // create a new var where you minus total expenses from monthly income
-      const leftOverExpense = ([profileExpenseArray.firebaseKey - monthly_income]);
-      // then create a new object in with the left over data
-      resolve({  });
+      const leftOverAmount = Number(profileObject.monthly_income) - totalExpenseNumber;
+      resolve({ monthlyIncome: profileObject.monthly_income, totalExpense: totalExpenseNumber, leftOverAmount });
     }).catch((error) => reject(error));
 });
 
@@ -49,4 +44,6 @@ const deleteProfileExpense = (profileId) => new Promise((resolve, reject) => {
   }).catch((error) => reject(error));
 });
 
-export { viewExpenseDetails, viewProfileDetails, deleteProfileExpense };
+export {
+  viewExpenseDetails, viewProfileDetails, deleteProfileExpense, viewExpenseReport,
+};

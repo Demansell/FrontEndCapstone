@@ -24,7 +24,7 @@ function ListExpense() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <div style={{ marginTop: '50px' }}>
+    <div style={{ marginTop: '20px' }}>
       <h1>Find Expense</h1>
       <input
         type="text"
